@@ -1,0 +1,44 @@
+{
+  "name": "mvp-ts",
+  "version": "1.0.0",
+  "description": "Bare minimum TypeScript project, with browser build & code quality checks",
+  "engines": {
+    "node": "11.6.0",
+    "npm": "6.5.0"
+  },
+  "scripts": {
+    "dev": "rm -rf ./dev && parcel --out-dir dev ./src/index.html",
+    "tsc": "tsc --watch --noEmit",
+    "build": "rm -rf ./docs && parcel build --out-dir ./docs --public-url ./ ./src/index.html",
+    "clean": "rm -rf .cache && rm -rf ./dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexburner/mvp-tsg.git"
+  },
+  "keywords": [],
+  "author": "aburner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexburner/mvp-ts/issues"
+  },
+  "homepage": "https://github.com/alexburner/mvp-ts#readme",
+  "devDependencies": {
+    "@babel/core": "7.4.4",
+    "@babel/plugin-transform-runtime": "7.4.4",
+    "@types/react": "16.8.19",
+    "@types/react-dom": "16.8.4",
+    "parcel-bundler": "1.12.3",
+    "prettier": "1.17.1",
+    "sass": "1.20.1",
+    "typescript": "3.4.5"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs2": "7.4.4",
+    "components": "^0.1.0",
+    "d3-interpolate": "^1.3.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "src": "^1.1.2"
+  }
+}
