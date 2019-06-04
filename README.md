@@ -35,7 +35,7 @@ npm run clean # for debugging: removes .cache/ + dev/
 
 This file configures Babel, which Parcel uses to transpile for browsers
 
-```json
+```jsonc
 {
   // This allows us to use import(), async/await, Map, Set, etc
   "plugins": [["@babel/plugin-transform-runtime", { "corejs": 2 }]]
@@ -46,14 +46,14 @@ This file configures Babel, which Parcel uses to transpile for browsers
 
 This file configures Prettier, which autoformats our code
 
-```json
+```jsonc
 {
-  // Opinion: Semicolons are just noise!
-  "semi": false,
+  // Fact: This reduces git diff churn
+  "trailingComma": "all",
   // Opinion: Single quotes for life!
   "singleQuote": true,
-  // Fact: This reduces git diff churn
-  "trailingComma": "all"
+  // Opinion: Semicolons are just noise!
+  "semi": false
 }
 ```
 
@@ -61,7 +61,7 @@ This file configures Prettier, which autoformats our code
 
 This files configures the TypeScript compiler
 
-```json
+```jsonc
 {
   "compileOnSave": true,
   "compilerOptions": {
@@ -89,3 +89,6 @@ This files configures the TypeScript compiler
 ```
 
 ### tslint.json
+```jsonc
+// TODO
+```
