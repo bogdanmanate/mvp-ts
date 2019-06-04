@@ -2,62 +2,136 @@
 
 Bare minimum TypeScript project, with browser build & code quality checks
 
-### Notes:
+### Supports
 
-- Supports
+- Type checking - `TypeScript`
+- Linting - `TSLint`
+- Formatting - `Prettier`
+- Bundling - `Parcel`
+  - Dev server (+ hot module replacement)
+  - Transpilation (+ sourcemaps)
+    - `TypeScript` -> `ES5`
+    - `SCSS` -> `CSS`
+  - Runtime support
+    - `import()` & code splitting
+    - Babel `async`/`await` & generators
+    - CoreJS polyfills (`Map`, `Set`, etc)
+  - Production build
+    - tree shaking
+    - dead code elimination
+    - minification
 
-## Development
+## Scripts
+
+### Installation
 
 ```sh
-# Install dependencies
 npm install
-
-# Development - Server
-npm run dev # run parcel dev server + watch (outputs to dev/)
-
-# Development - Code Quality (optional - editors can do this)
-npm run tsc # run typescript compiler + watch (no emit, types only)
-npm run fix # run prettier & tslint + watch (uses onchange package)
-
-# Test
-npm run test # runs jest
-
-# Build
-npm run build # (outputs to docs/)
-
-# Extras
-npm run clean # for debugging: removes .cache/ + dev/
 ```
 
-## Config files
+### Development
 
-### .babelrc
+```sh
+# Dev Server
+npm run dev # parcel dev server + watch (outputs to dev/)
 
-This file configures Babel, which Parcel uses to transpile for browsers
+# Type Checking
+npm run tsc # typescript compiler + watch (no emit, types only)
+
+# Unit Tests
+npm run test # jest + watch (targets src/**/*.spec.ts)
+
+# Production Build
+npm run build # (outputs to docs/)
+```
+
+### Formatting & Linting _(optional - most editors can run these)_
+
+```sh
+npm run fix # prettier & tslint --fix (on src/)
+
+npm run prettier # prettier (on src/)
+npm run tslint # tslint --fix (on src/)
+```
+
+### Parcel debugging
+
+```sh
+npm run clean # remove .cache/ + dev/
+```
+
+## Dependencies
+
+### Runtime
+
+```jsonc
+"dependencies": {
+  // CoreJS runtime polyfills
+  "@babel/runtime-corejs2": "7.4.4",
+
+  // [optional] React+DOM
+  "react": "16.8.6",
+  "react-dom": "16.8.6",
+}
+```
+
+### Development
+
+```jsonc
+"devDependencies": {
+  // Babel core compiler
+  "@babel/core": "7.4.4",
+
+  // Babel transform for runtime async/await, generators, polyfills
+  "@babel/plugin-transform-runtime": "7.4.4",
+
+  // [optional] React type definitions
+  "@types/react": "16.8.19",
+  "@types/react-dom": "16.8.4",
+
+  // Parcel (web app bundler)
+  "parcel-bundler": "1.12.3",
+
+  // Prettier (code formatting)
+  "prettier": "1.17.1",
+
+  // SCSS language - Very easy to swap! (just change this)
+  "sass": "1.20.1",
+
+  // TypeScript language
+  "typescript": "3.4.5"
+}
+```
+
+## Config
+
+### `.babelrc`
+
+This file configures Babel, which Parcel uses for transpilation
 
 ```jsonc
 {
-  // This allows us to use import(), async/await, Map, Set, etc
+  // This adds runtime support for async/await, generators, and polyfills
   "plugins": [["@babel/plugin-transform-runtime", { "corejs": 2 }]]
 }
 ```
 
-### .prettierrc
+### `.prettierrc`
 
-This file configures Prettier, which autoformats our code
+This files configures the Prettier auto-formatter
 
 ```jsonc
 {
-  // Fact: This reduces git diff churn
+  // [fact] This reduces git diff churn
   "trailingComma": "all",
-  // Opinion: Single quotes for life!
+  // [opinion] Single quotes for life!
   "singleQuote": true,
-  // Opinion: Semicolons are just noise!
+  // [opinion] Semicolons are just noise!
   "semi": false
 }
 ```
 
-### tsconfig.json
+### `tsconfig.json`
 
 This files configures the TypeScript compiler
 
@@ -67,8 +141,6 @@ This files configures the TypeScript compiler
   "compilerOptions": {
     // Allow default imports like `import React from 'react'`
     "allowSyntheticDefaultImports": true,
-    // Allow absolute imports like `import { Thing } from 'src/Thing'`
-    "baseUrl": ".",
     // Adds safety when working across OS / filesystems
     "forceConsistentCasingInFileNames": true,
     // Optional: Only needed if you're using React
@@ -88,7 +160,10 @@ This files configures the TypeScript compiler
 }
 ```
 
-### tslint.json
+### `tslint.json`
+
+This files configures the TSLint linter
+
 ```jsonc
 // TODO
 ```
