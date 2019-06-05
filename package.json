@@ -1,7 +1,7 @@
 {
   "name": "mvp-ts",
   "version": "1.0.0",
-  "description": "Bare minimum TypeScript project, with browser build & code quality checks",
+  "description": "Production-ready TypeScript with minimal config",
   "engines": {
     "node": "11.6.0",
     "npm": "6.5.0"
@@ -10,7 +10,7 @@
     "dev": "rm -rf ./dev && parcel --out-dir dev ./src/index.html",
     "tsc": "tsc --watch --noEmit",
     "build": "rm -rf ./docs && parcel build --out-dir ./docs --public-url ./ ./src/index.html",
-    "clean": "rm -rf .cache && rm -rf ./dev"
+    "clean": "rm -rf .cache"
   },
   "repository": {
     "type": "git",

@@ -1,25 +1,35 @@
-# mvp-ts
+# `mvp-ts`
 
-Bare minimum TypeScript project, with browser build & code quality checks
+Production-ready TypeScript with minimal config
 
-### Supports
+### Why? Why not `create-react-app --typescript`?
 
-- Type checking - `TypeScript`
-- Linting - `TSLint`
-- Formatting - `Prettier`
-- Bundling - `Parcel`
-  - Dev server (+ hot module replacement)
-  - Transpilation (+ sourcemaps)
-    - `TypeScript` -> `ES5`
-    - `SCSS` -> `CSS`
-  - Runtime support
-    - `import()` & code splitting
-    - Babel `async`/`await` & generators
-    - CoreJS polyfills (`Map`, `Set`, etc)
-  - Production build
-    - tree shaking
-    - dead code elimination
-    - minification
+This is an experiment for using the `Parcel` bundler, a `Webpack` alternative which claims to be zero-config.
+
+This project adds the minimum additional config necessary to get full-featured TypeScript transpiled for the web.
+
+### This project supports:
+
+- Dev server
+  - hot module replacement
+  - source maps
+- Transpilation
+  - `TypeScript` -> `ES5`
+  - `SCSS` -> `CSS`
+- Runtime
+  - `import()` & code splitting
+  - Babel `async`/`await` & generators
+  - CoreJS polyfills (`Map`, `Set`, etc)
+- Production
+  - tree shaking
+  - dead code elimination
+  - minification
+
+### This project also includes:
+
+- Type checking with `TypeScript`
+- Formatting with `Prettier`
+- Linting with `TSLint`
 
 ## Scripts
 
@@ -32,32 +42,28 @@ npm install
 ### Development
 
 ```sh
-# Dev Server
+# Dev server
 npm run dev # parcel dev server + watch (outputs to dev/)
 
-# Type Checking
+# Type checking
 npm run tsc # typescript compiler + watch (no emit, types only)
 
-# Unit Tests
+# Unit tests
 npm run test # jest + watch (targets src/**/*.spec.ts)
 
-# Production Build
+# Production build
 npm run build # (outputs to docs/)
 ```
 
 ### Formatting & Linting _(optional - most editors can run these)_
 
 ```sh
-npm run fix # prettier & tslint --fix (on src/)
+# Run all
+npm run fix
 
-npm run prettier # prettier (on src/)
-npm run tslint # tslint --fix (on src/)
-```
-
-### Parcel debugging
-
-```sh
-npm run clean # remove .cache/ + dev/
+# Run individuals
+npm run prettier # prettier
+npm run tslint # tslint --fix
 ```
 
 ## Dependencies
@@ -66,10 +72,10 @@ npm run clean # remove .cache/ + dev/
 
 ```jsonc
 "dependencies": {
-  // CoreJS runtime polyfills
+  // Babel runtime + CoreJS polyfills
   "@babel/runtime-corejs2": "7.4.4",
 
-  // [optional] React+DOM
+  // [optional:react] React+DOM
   "react": "16.8.6",
   "react-dom": "16.8.6",
 }
@@ -82,10 +88,10 @@ npm run clean # remove .cache/ + dev/
   // Babel core compiler
   "@babel/core": "7.4.4",
 
-  // Babel transform for runtime async/await, generators, polyfills
+  // Babel transform for async/await, generators, polyfills
   "@babel/plugin-transform-runtime": "7.4.4",
 
-  // [optional] React type definitions
+  // [optional:react] React type definitions
   "@types/react": "16.8.19",
   "@types/react-dom": "16.8.4",
 
@@ -103,29 +109,46 @@ npm run clean # remove .cache/ + dev/
 }
 ```
 
-## Config
+## Configuration
 
 ### `.babelrc`
 
-This file configures Babel, which Parcel uses for transpilation
+For Babel, used by Parcel for transpilation
 
 ```jsonc
 {
-  // This adds runtime support for async/await, generators, and polyfills
+  // Adds support for async/await, generators, and polyfills
   "plugins": [["@babel/plugin-transform-runtime", { "corejs": 2 }]]
 }
 ```
 
+### `.browserslistrc`
+
+For Babel `preset-env` browser targets
+
+```sh
+[development]
+last 1 chrome version
+last 1 firefox version
+
+[production staging]
+last 1 version
+not dead
+> 0.2%
+```
+
 ### `.prettierrc`
 
-This files configures the Prettier auto-formatter
+For the Prettier auto-formatter
 
 ```jsonc
 {
-  // [fact] This reduces git diff churn
+  // [fact] Reduces git diff churn
   "trailingComma": "all",
+
   // [opinion] Single quotes for life!
   "singleQuote": true,
+
   // [opinion] Semicolons are just noise!
   "semi": false
 }
@@ -133,36 +156,55 @@ This files configures the Prettier auto-formatter
 
 ### `tsconfig.json`
 
-This files configures the TypeScript compiler
+For the TypeScript compiler
 
 ```jsonc
 {
   "compileOnSave": true,
   "compilerOptions": {
-    // Allow default imports like `import React from 'react'`
-    "allowSyntheticDefaultImports": true,
-    // Adds safety when working across OS / filesystems
-    "forceConsistentCasingInFileNames": true,
-    // Optional: Only needed if you're using React
-    "jsx": "react",
-    // These 3 are required for dynamic imports
+    //
+    // Module settings
+    //
+
+    // Required for dynamic import()
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
-    // Alert on unused variables
+
+    // Allow imports like `import React from 'react'`
+    "allowSyntheticDefaultImports": true,
+
+    // [optional:react] Required for React JSX syntax
+    "jsx": "react",
+
+    //
+    // Code quality
+    //
+
+    // Enable all strict flags
+    "strict": true,
+    // alwaysStrict
+    // noImplicitAny
+    // noImplicitThis
+    // strictBindCallApply
+    // strictFunctionTypes
+    // strictNullChecks
+    // strictPropertyInitialization
+
+    // Prevent unused values
     "noUnusedLocals": true,
-    // Alert on unused arguments
     "noUnusedParameters": true,
-    // Enable ALL strict flags
-    "strict": true
+
+    // Add safety for working between Linux/MacOS/Windows
+    "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["node_modules"]
+  "include": ["src"]
 }
 ```
 
 ### `tslint.json`
 
-This files configures the TSLint linter
+For the TSLint linter
 
 ```jsonc
 // TODO
