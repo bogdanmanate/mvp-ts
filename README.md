@@ -30,6 +30,7 @@ This project adds the minimum additional config necessary to get full-featured T
 - Type checking with `TypeScript`
 - Formatting with `Prettier`
 - Linting with `TSLint`
+- Components with `React`\*
 
 ## Scripts
 
@@ -166,15 +167,23 @@ For the TypeScript compiler
     // Module settings
     //
 
-    // Required for dynamic import()
+    // Allows dynamic import()
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
 
-    // Allow imports like `import React from 'react'`
+    // Allows Parcel's absolute-ish src/ imports
+    // ex > import { MyThing } from '~/ui/MyThing'
+    // docs > https://parceljs.org/module_resolution.html#~-tilde-paths
+    // src > https://gist.github.com/croaky/e3394e78d419475efc79c1e418c243ed
+    "baseUrl": "./src",
+    "paths": { "~*": ["./*"] },
+
+    // Allows default imports from modules with no default export
+    // ex > import React from 'react'
     "allowSyntheticDefaultImports": true,
 
-    // [optional:react] Required for React JSX syntax
+    // [optional:react] Allows React JSX syntax
     "jsx": "react",
 
     //
@@ -208,4 +217,23 @@ For the TSLint linter
 
 ```jsonc
 // TODO
+```
+
+## Don't like React?
+
+Remove all dependencies marked with `[optional:react]` in this document
+
+### `package.json`
+
+```jsonc
+"react": "16.8.6",
+"react-dom": "16.8.6",
+"@types/react": "16.8.19",
+"@types/react-dom": "16.8.4",
+```
+
+### `tsconfig.json`
+
+```jsonc
+"jsx": "react",
 ```

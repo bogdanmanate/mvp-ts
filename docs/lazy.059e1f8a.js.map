@@ -1,0 +1,1 @@
+{"version":3,"sources":["util/lazy.ts"],"names":[],"mappings":";AAEO,aAAA,OAAA,eAAA,QAAA,aAAA,CAAA,OAAA,IAAA,QAAA,UAAA,EAFP,QAAQ,IAAI,yBAEL,IAAM,EAAO,WAAM,OAAA,QAAQ,IAAI,uBAA/B,QAAA,KAAA","file":"lazy.059e1f8a.js","sourceRoot":"../src","sourcesContent":["console.log('lazy: top-level scope')\n\nexport const test = () => console.log('lazy: test() scope')\n"]}

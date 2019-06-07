@@ -1,18 +1,49 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    // build params
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    //
+    // Module settings
+    //
+
+    // Allows dynamic import()
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
-    // quality control
+
+    // Allows Parcel's absolute-ish src/ imports
+    // ex > import { MyThing } from '~/ui/MyThing'
+    // docs > https://parceljs.org/module_resolution.html#~-tilde-paths
+    // src > https://gist.github.com/croaky/e3394e78d419475efc79c1e418c243ed
+    "baseUrl": "./src",
+    "paths": { "~*": ["./*"] },
+
+    // Allows default imports from modules with no default export
+    // ex > import React from 'react'
+    "allowSyntheticDefaultImports": true,
+
+    // [optional:react] Allows React JSX syntax
+    "jsx": "react",
+
+    //
+    // Code quality
+    //
+
+    // Enable all strict flags
+    "strict": true,
+    // alwaysStrict
+    // noImplicitAny
+    // noImplicitThis
+    // strictBindCallApply
+    // strictFunctionTypes
+    // strictNullChecks
+    // strictPropertyInitialization
+
+    // Prevent unused values
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strict": true
+
+    // Add safety for working between Linux/MacOS/Windows
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"]
 }
