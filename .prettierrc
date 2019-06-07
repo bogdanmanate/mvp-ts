@@ -1,5 +1,10 @@
 {
-  "semi": false,
+  // [fact] Reduces git diff churn
+  "trailingComma": "all",
+
+  // [opinion] Single quotes for life!
   "singleQuote": true,
-  "trailingComma": "all"
+
+  // [opinion] Semicolons are just noise!
+  "semi": false
 }
