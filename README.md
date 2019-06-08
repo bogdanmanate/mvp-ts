@@ -199,17 +199,15 @@ not dead
 
 For the Prettier auto-formatter
 
-```jsonc
-{
-  // [fact] Reduces git diff churn
-  "trailingComma": "all",
+```yaml
+# [fact] Reduces git diff churn
+trailingComma: 'all'
 
-  // [opinion] Single quotes for life!
-  "singleQuote": true,
+# [opinion] Single quotes for life!
+singleQuote: true
 
-  // [opinion] Semicolons are just noise!
-  "semi": false
-}
+# [opinion] Semicolons are just noise!
+semi: false
 ```
 
 #### `tsconfig.json`

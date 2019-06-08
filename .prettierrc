@@ -1,10 +1,8 @@
-{
-  // [fact] Reduces git diff churn
-  "trailingComma": "all",
+# [fact] Reduces git diff churn
+trailingComma: "all"
 
-  // [opinion] Single quotes for life!
-  "singleQuote": true,
+# [opinion] Single quotes for life!
+singleQuote: true
 
-  // [opinion] Semicolons are just noise!
-  "semi": false
-}
+# [opinion] Semicolons are just noise!
+semi: false
