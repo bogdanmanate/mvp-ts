@@ -1,4 +1,4 @@
-import { sum } from '~util/sum'
+import { sum } from './sum'
 
 describe('sum', () => {
   it('adds 0 numbers', () => expect(sum()).toBe(0))

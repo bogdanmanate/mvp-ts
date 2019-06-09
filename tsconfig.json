@@ -10,13 +10,6 @@
     "module": "esnext",
     "target": "esnext",
 
-    // Allows Parcel's absolute-ish src/ imports
-    // ex > import { MyThing } from '~/ui/MyThing'
-    // docs > https://parceljs.org/module_resolution.html#~-tilde-paths
-    // src > https://gist.github.com/croaky/e3394e78d419475efc79c1e418c243ed
-    "baseUrl": "./src",
-    "paths": { "~*": ["./*"] },
-
     // Allows default imports from modules with no default export
     // ex > import React from 'react'
     "allowSyntheticDefaultImports": true,
