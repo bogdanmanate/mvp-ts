@@ -1,6 +1,6 @@
-# `mvp-web-ts`
+# `mvp-ts`
 
-Production-ready TypeScript with minimal config — for public web
+Production-ready TypeScript web project, with minimal config
 
 #### Table of Contents
 
@@ -16,7 +16,7 @@ Production-ready TypeScript with minimal config — for public web
 - Dependencies
   - Runtime
   - Development
-- Configuration
+- Configuration Files
   - `.babelrc`
   - `.browserslistrc`
   - `.prettierrc`
@@ -49,6 +49,7 @@ This project includes config for:
   - `import()` & code splitting
   - `async`/`await` & generators
   - CoreJS polyfills (`Map`, `Set`, etc)
+  - Web Worker threads
 - Production
   - tree shaking
   - dead code elimination
@@ -86,8 +87,6 @@ Remove or update this 1 line
 
 ## Scripts
 
-From `package.json`
-
 #### Installation
 
 ```sh
@@ -97,38 +96,27 @@ npm install
 #### Development
 
 ```sh
-# parcel dev server + watch
-# (outputs to dev/)
-npm run dev
-
-# typescript compiler + watch
-# (no emit, types only)
-npm run tsc
-
- # jest + watch
- # (on *.spec.ts files)
-npm run test
+npm run dev # parcel dev server + watch (outputs to dev/)
+npm run tsc # typescript compiler + watch (no emit, types only)
+npm run test # jest + watch (on *.spec.ts files)
 ```
 
 #### Production
 
 ```sh
-# parcel production build
-# (outputs to docs/)
-npm run build
+npm run build # parcel production build (outputs to docs/)
 ```
 
-#### Formatting & Linting _(optional - most editors can run these)_
+#### Code Formatting _(optional - most editors can run these based on existing project config)_
 
 ```sh
-npm run fix # all
-npm run prettier # prettier
-npm run tslint # tslint --fix
+# TODO
+npm run format # run all formatters
+npm run prettier # run prettier
+npm run tslint # run tslint --fix
 ```
 
 ## Dependencies
-
-From `package.json`
 
 #### Development
 
@@ -167,7 +155,7 @@ From `package.json`
 "react-dom": "16.8.6",
 ```
 
-## Configuration
+## Configuration Files
 
 #### `.babelrc`
 
