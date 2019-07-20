@@ -107,12 +107,13 @@ npm run test # jest + watch (on *.spec.ts files)
 npm run build # parcel production build (outputs to docs/)
 ```
 
-#### Code Formatting _(optional - most editors can run these based on existing project config)_
+#### Code Formatting _(optional - most editors can handle these themselves)_
 
 ```sh
 # TODO
 npm run format # run all formatters
 npm run prettier # run prettier
+npm run stylelint # stylelint --fix
 npm run tslint # run tslint --fix
 ```
 

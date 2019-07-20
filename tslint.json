@@ -1,0 +1,51 @@
+{
+  "rules": {
+    "await-promise": true,
+    "arrow-return-shorthand": [true, "multiline"],
+    "ban": [
+      true,
+      {
+        "name": ["*", "bind"],
+        "message": "Use an arrow function instead."
+      }
+    ],
+    "ban-comma-operator": true,
+    "curly": [true, "ignore-same-line"],
+    "deprecation": true,
+    "member-access": [true, "check-accessor", "check-parameter-property"],
+    "no-any": true,
+    "no-conditional-assignment": true,
+    "no-default-export": true,
+    "no-duplicate-imports": true,
+    "no-duplicate-super": true,
+    "no-duplicate-switch-case": true,
+    "no-invalid-template-strings": true,
+    "no-invalid-this": true,
+    "no-non-null-assertion": true,
+    "no-parameter-reassignment": true,
+    "no-shadowed-variable": true,
+    "no-sparse-arrays": true,
+    "no-switch-case-fall-through": true,
+    "no-tautology-expression": true,
+    "no-this-assignement": [true, "allow-destructuring"],
+    "no-unnecessary-class": true,
+    "no-unsafe-finally": true,
+    "no-unused-expression": true,
+    "no-var-keyword": true,
+    "new-parens": true,
+    "only-arrow-functions": true,
+    "prefer-const": true,
+    "prefer-function-over-method": [true, "allow-public", "allow-protected"],
+    "prefer-readonly": true,
+    "static-this": true,
+    "triple-equals": true,
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "allow-leading-underscore",
+        "allow-pascal-case"
+      ]
+    }
+  }
+}
