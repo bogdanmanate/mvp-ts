@@ -122,37 +122,42 @@ npm run tslint # run tslint --fix
 
 ```jsonc
 // Babel core compiler
-"@babel/core": "7.4.4",
+"@babel/core": "7.5.5",
 
 // Babel transform for async/await, generators, polyfills
-"@babel/plugin-transform-runtime": "7.4.4",
+"@babel/plugin-transform-runtime": "7.5.5",
 
 // [optional:react] React type definitions
-"@types/react": "16.8.19",
+"@types/react": "16.8.23",
 "@types/react-dom": "16.8.4",
+
+// Jest (test runner) + TS adapter
+"@types/jest": "24.0.15",
+"jest": "24.8.0",
+"ts-jest": "24.0.2",
 
 // Parcel (web app bundler)
 "parcel-bundler": "1.12.3",
 
 // Prettier (code formatting)
-"prettier": "1.17.1",
+"prettier": "1.18.2",
 
 // SCSS language - Very easy to swap! (just change this)
-"sass": "1.20.1",
+"sass": "1.22.7",
 
 // TypeScript language
-"typescript": "3.4.5"
+"typescript": "3.5.3"
 ```
 
 #### Runtime
 
 ```jsonc
 // Babel runtime + CoreJS polyfills
-"@babel/runtime-corejs2": "7.4.4",
+"@babel/runtime-corejs2": "7.5.5",
 
 // [optional:react] React+DOM
 "react": "16.8.6",
-"react-dom": "16.8.6",
+"react-dom": "16.8.6"
 ```
 
 ## Configuration Files
@@ -181,6 +186,17 @@ last 1 firefox version
 last 1 version
 not dead
 > 0.2%
+```
+
+#### `jest.config.js`
+
+For getting Jest to work with TypeScript
+
+```sh
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+}
 ```
 
 #### `.prettierrc`
