@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,KACE,eAAA,CACA,UAAA,CACA,qBAAA,CACA,uBAGF,MACE","file":"src.c01a910a.css","sourceRoot":"../src","sourcesContent":["body {\n  background: #333;\n  color: #eee;\n  box-sizing: border-box;\n  font-family: sans-serif;\n}\n\n#root {\n  text-align: center;\n}\n"]}
