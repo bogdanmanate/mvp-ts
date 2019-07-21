@@ -7,4 +7,4 @@ module.exports=require("core-js/library/fn/json/stringify");
 },{"core-js/library/fn/json/stringify":"Q17y"}],"0ZXZ":[function(require,module,exports) {
 "use strict";var e=r(require("@babel/runtime-corejs2/core-js/json/stringify"));function r(e){return e&&e.__esModule?e:{default:e}}var s=self;s.addEventListener("message",function(r){var a=JSON.parse(r.data);console.log("Worker thread received message from host:",a),s.postMessage((0,e.default)({bar:"foo"}))});
 },{"@babel/runtime-corejs2/core-js/json/stringify":"E09K"}]},{},["0ZXZ"], null)
-//# sourceMappingURL=worker.f052bfd4.js.map
+//# sourceMappingURL=worker.a7a407bc.js.map
