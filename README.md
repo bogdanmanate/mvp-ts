@@ -4,7 +4,7 @@ This is an experiment using Parcel Bundler to assemble a "Minimum Viable Project
 
 #### What is "viable"?
 
-With minimum config, we want a production-ready project, with a full quality dev & build.
+With minimum config, we want a production-ready project, with a full quality dev & build experience.
 
 #### Why Parcel?
 
