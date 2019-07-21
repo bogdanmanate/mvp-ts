@@ -11,7 +11,9 @@
     "tsc": "tsc --watch --noEmit",
     "test": "jest --watch",
     "build": "rm -rf ./docs && parcel build --out-dir ./docs --public-url ./ ./src/index.html",
-    "clean": "rm -rf .cache"
+    "format": "npm run tslint && npm run prettier",
+    "prettier": "prettier --write 'src/**/*.+(ts|tsx|json|html|scss)'",
+    "tslint": "tslint --fix --project tsconfig.json 'src/**/*.+(ts|tsx)'"
   },
   "repository": {
     "type": "git",
@@ -25,8 +27,8 @@
   },
   "homepage": "https://github.com/alexburner/mvp-ts#readme",
   "devDependencies": {
-    "@babel/core": "7.5.5",
-    "@babel/plugin-transform-runtime": "7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
     "@types/jest": "24.0.15",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
@@ -35,6 +37,7 @@
     "prettier": "1.18.2",
     "sass": "1.22.7",
     "ts-jest": "24.0.2",
+    "tslint": "5.18.0",
     "typescript": "3.5.3"
   },
   "dependencies": {

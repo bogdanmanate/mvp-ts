@@ -1,4 +1,4 @@
 import React from 'react'
 import { Hello } from './Hello'
 
-export const Root: React.SFC = () => <Hello name="World" />
+export const Root: React.FunctionComponent = () => <Hello name="World" />

@@ -24,7 +24,6 @@ Parcel requires zero configuration of its own (other than dev/prod build setting
 - Code formatting
   - Prettier
   - TSLint
-  - Stylelint
 
 #### Production Build
 
@@ -50,12 +49,9 @@ npm run test  # unit tests     → Jest tests          + watch  (on *.spec.ts fi
 npm run build  # parcel production build  (outputs to docs/)
 
 # Code formatting (optional: most editors can handle these themselves)
-npm run format        # run all formatters
-npm run format:watch  # run all formatters + watch
-# singles -----------------------------------------------
-npm run prettier      # just run prettier --write
-npm run stylelint     # just run stylelint --fix
-npm run tslint        # just run tslint --fix
+npm run format     # run all formatters
+npm run prettier   # just run prettier --write
+npm run tslint     # just run tslint --fix
 ```
 
 ## NPM Dependencies
@@ -86,9 +82,8 @@ parcel-bundler
 @babel/plugin-transform-runtime # helps with injected code size
 
 # Formatters
-prettier # style auto-formatter
-stylelint # stylesheet linter
-tslint # typescript linter
+prettier # code style auto-formatter
+tslint # typescript linter + fixer
 
 # React types [optional]
 @types/react
@@ -104,7 +99,6 @@ tsconfig.json    # For the TypeScript compiler
 .browserslistrc  # For Babel preset-env browser targets
 
 .prettierrc      # For the Prettier auto-formatter
-.stylelintrc     # For the StyleLint linter
 tslint.json      # For the TSLint linter
 ```
 

@@ -13,7 +13,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope
  *
  */
-const context = (self as any) as DedicatedWorkerGlobalScope
+const context = (self as unknown) as DedicatedWorkerGlobalScope
 
 context.addEventListener('message', e => {
   const data: unknown = JSON.parse(e.data)

@@ -20,14 +20,14 @@ interface WorkerGlobalScope
   readonly location: WorkerLocation
   readonly performance: Performance
   readonly self: WorkerGlobalScope
-  onerror(this: WorkerGlobalScope, ev: ErrorEvent): any
+  onerror(this: WorkerGlobalScope, ev: ErrorEvent): unknown
   msWriteProfilerMark(profilerMarkName: string): void
   addEventListener<K extends keyof WorkerGlobalScopeEventMap>(
     type: K,
     listener: (
       this: WorkerGlobalScope,
       ev: WorkerGlobalScopeEventMap[K],
-    ) => any,
+    ) => unknown,
     useCapture?: boolean,
   ): void
   addEventListener(
@@ -47,15 +47,15 @@ interface DedicatedWorkerGlobalScopeEventMap extends WorkerGlobalScopeEventMap {
 }
 
 interface DedicatedWorkerGlobalScope extends WorkerGlobalScope {
-  onmessage(this: DedicatedWorkerGlobalScope, ev: MessageEvent): any
+  onmessage(this: DedicatedWorkerGlobalScope, ev: MessageEvent): unknown
   close(): void
-  postMessage<T>(message: T, transfer?: any[]): void
+  postMessage<T>(message: T, transfer?: unknown[]): void
   addEventListener<K extends keyof DedicatedWorkerGlobalScopeEventMap>(
     type: K,
     listener: (
       this: DedicatedWorkerGlobalScope,
       ev: DedicatedWorkerGlobalScopeEventMap[K],
-    ) => any,
+    ) => unknown,
     useCapture?: boolean,
   ): void
   addEventListener(
@@ -110,10 +110,10 @@ interface WorkerUtils extends Object, WindowBase64 {
   clearInterval(handle: number): void
   clearTimeout(handle: number): void
   importScripts(...urls: string[]): void
-  setImmediate(handler: (...args: any[]) => void): number
-  setImmediate(handler: any, ...args: any[]): number
-  setInterval(handler: (...args: any[]) => void, timeout: number): number
-  setInterval(handler: any, timeout?: any, ...args: any[]): number
-  setTimeout(handler: (...args: any[]) => void, timeout: number): number
-  setTimeout(handler: any, timeout?: any, ...args: any[]): number
+  setImmediate(handler: (...args: unknown[]) => void): number
+  setImmediate(handler: unknown, ...args: unknown[]): number
+  setInterval(handler: (...args: unknown[]) => void, timeout: number): number
+  setInterval(handler: unknown, timeout?: unknown, ...args: unknown[]): number
+  setTimeout(handler: (...args: unknown[]) => void, timeout: number): number
+  setTimeout(handler: unknown, timeout?: unknown, ...args: unknown[]): number
 }

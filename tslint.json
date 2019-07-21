@@ -27,7 +27,7 @@
     "no-sparse-arrays": true,
     "no-switch-case-fall-through": true,
     "no-tautology-expression": true,
-    "no-this-assignement": [true, "allow-destructuring"],
+    "no-this-assignment": [true, "allow-destructuring"],
     "no-unnecessary-class": true,
     "no-unsafe-finally": true,
     "no-unused-expression": true,
