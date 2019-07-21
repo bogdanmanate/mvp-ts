@@ -1,7 +1,7 @@
 {
   "name": "mvp-ts",
   "version": "1.0.0",
-  "description": "Production-ready TypeScript with minimal config",
+  "description": "Minimum Viable Project for TypeScript on the web",
   "engines": {
     "node": "11.6.0",
     "npm": "6.5.0"
