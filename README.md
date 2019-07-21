@@ -83,7 +83,7 @@ parcel-bundler
 
 # Babel
 @babel/core # compiler core
-@babel/plugin-transform-runtime # for async/await, generators, polyfills
+@babel/plugin-transform-runtime # helps with injected code size
 
 # Formatters
 prettier # style auto-formatter
@@ -107,3 +107,17 @@ tsconfig.json    # For the TypeScript compiler
 .stylelintrc     # For the StyleLint linter
 tslint.json      # For the TSLint linter
 ```
+
+## Note
+
+This project's config will get even simpler with Parcel 2, which will remove the need for specifying Babel polyfill and generator runtime (async/await) behavior. See relevant repo issue comment here: https://github.com/parcel-bundler/parcel/issues/1762#issuecomment-480687638
+
+When it's done, we'll be able to remove these dependencies:
+
+```sh
+@babel/core
+@babel/plugin-transform-runtime
+@babel/runtime-corejs2
+```
+
+And the whole `.babelrc` file.
