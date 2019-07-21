@@ -2,6 +2,10 @@
 
 \_
 
+add sorting & comments to tslint.json based on my slideshow from last time
+
+\_
+
 add tslint
 
 - dependency
@@ -23,9 +27,3 @@ add stylelint
 add format
 
 - npm script
-
-\_
-
-rewrite docs to be more simple & parcel-first
-
-"Attempting a minimum-config production-ready TypeScript project with Parcel Bundler" or something
