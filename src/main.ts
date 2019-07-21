@@ -18,8 +18,26 @@ setTimeout(async () => {
 //
 // Test Polyfills
 //
-const set = new Set([0, 1, 2, 2, 3])
+const set = new Set([0, 1, 2, 2, 3, 'settarget'])
 console.log(set)
+
+//
+// Test Rest & Spread
+//
+{
+  const foo = (...resttarget: number[]) => console.log(resttarget)
+  foo(1, 2, 3)
+}
+{
+  const foo = { one: 1, two: 2, objspreadtarget: 3 }
+  const bar = { ...foo }
+  console.log(foo === bar, bar)
+}
+{
+  const foo = [1, 2, 'arrspreadtarget']
+  const bar = [...foo]
+  console.log(foo === bar, bar)
+}
 
 //
 // Test Web Worker
