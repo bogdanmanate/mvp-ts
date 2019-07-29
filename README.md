@@ -98,6 +98,8 @@ tsconfig.json    # For the TypeScript compiler
 .babelrc         # For Babel, used by Parcel for transpilation
 .browserslistrc  # For Babel preset-env browser targets
 
+jest.config.js   # For Jest so it can parse TypeScript
+
 .prettierrc      # For the Prettier auto-formatter
 tslint.json      # For the TSLint linter
 ```
