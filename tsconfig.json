@@ -14,9 +14,6 @@
     // ex > import React from 'react'
     "allowSyntheticDefaultImports": true,
 
-    // [optional:react] Allows React JSX syntax
-    "jsx": "react",
-
     //
     // Code quality
     //
