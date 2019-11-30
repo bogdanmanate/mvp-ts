@@ -1,4 +1,0 @@
-{
-  // Adds support for async/await, generators, and polyfills
-  "plugins": [["@babel/plugin-transform-runtime", { "corejs": 2 }]]
-}
