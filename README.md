@@ -56,14 +56,6 @@ npm run tslint    # tslint --fix --project tsconfig.json 'src/**/*.+(ts|tsx)'
 
 ## NPM Dependencies
 
-#### Runtime
-
-```sh
-# React [optional]
-react
-react-dom
-```
-
 #### Development
 
 ```sh
@@ -81,6 +73,14 @@ tslint # typescript linter + fixer
 # React types [optional]
 @types/react
 @types/react-dom
+```
+
+#### Runtime
+
+```sh
+# React [optional]
+react
+react-dom
 ```
 
 ## Project Config Files
