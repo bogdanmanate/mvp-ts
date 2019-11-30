@@ -41,17 +41,17 @@ Parcel requires zero configuration of its own (other than dev/prod build setting
 npm install  #  download all dependencies
 
 # Development
-npm run dev   # dev server     → Parcel dev server   + watch  (outputs to dev/)
-npm run tsc   # type checking  → TypeScript compiler + watch  (no emit, types only)
-npm run test  # unit tests     → Jest tests          + watch  (on *.spec.ts files)
+npm run dev   # rm -rf ./dev && parcel --out-dir dev ./src/index.html
+npm run tsc   # tsc --watch --noEmit
+npm run test  # jest --watch
 
-# Production
-npm run build  # parcel production build  (outputs to docs/)
+# Production (outputs to docs/)
+npm run build  # rm -rf ./docs && parcel build --out-dir ./docs --public-url ./ ./src/index.html
 
 # Code formatting (optional: most editors can handle these themselves)
-npm run format     # run all formatters
-npm run prettier   # just run prettier --write
-npm run tslint     # just run tslint --fix
+npm run format    # npm run tslint && npm run prettier
+npm run prettier  # prettier --write 'src/**/*.+(ts|tsx|json|html|scss)'
+npm run tslint    # tslint --fix --project tsconfig.json 'src/**/*.+(ts|tsx)'
 ```
 
 ## NPM Dependencies
