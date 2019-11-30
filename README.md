@@ -4,11 +4,11 @@ This is an experiment using Parcel Bundler to assemble a "Minimum Viable Project
 
 #### What is "viable"?
 
-With minimum config, we want a production-ready project, with a full quality dev & build experience.
+With minimum config, we want a production-ready project, with a full-quality dev & build experience.
 
 #### Why Parcel?
 
-Parcel requires zero configuration of its own (other than dev/prod build settings passed as `--flags` to its CLI tool). Instead, it relies entirely on 3rd party config files, such as TypeScript's `tsconfig.json` and Babel's `.browserslistrc` .
+Parcel requires zero configuration of its own (other than a CLI flag or two). Just point it at your entry file, and it will follow dependencies & apply tooling as needed. Tooling can be customized through their own standard files (such as Typescript's `tsconfig.json` and Babel's `browserslistrc`).
 
 ## Project Requirements
 
@@ -83,7 +83,7 @@ react
 react-dom
 ```
 
-## Project Config Files
+## Config Files
 
 ```sh
 tsconfig.json    # For the TypeScript compiler
