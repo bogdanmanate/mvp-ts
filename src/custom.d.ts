@@ -10,11 +10,7 @@ interface WorkerGlobalScopeEventMap {
   error: ErrorEvent
 }
 
-interface WorkerGlobalScope
-  extends EventTarget,
-    WorkerUtils,
-    WindowConsole,
-    GlobalFetch {
+interface WorkerGlobalScope extends EventTarget, WorkerUtils, WindowConsole {
   readonly caches: CacheStorage
   readonly isSecureContext: boolean
   readonly location: WorkerLocation
