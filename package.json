@@ -7,7 +7,7 @@
     "npm": "6.5.0"
   },
   "scripts": {
-    "dev": "rm -rf ./dev && parcel --out-dir dev ./src/index.html",
+    "dev": "rm -rf ./dev && parcel ./src/index.html",
     "tsc": "tsc --watch --noEmit",
     "test": "jest --watch",
     "build": "rm -rf ./docs && parcel build --out-dir ./docs --public-url ./ ./src/index.html",
@@ -31,7 +31,6 @@
     "@types/react": "16.9.13",
     "@types/react-dom": "16.9.4",
     "jest": "24.9.0",
-    "parcel-bundler": "1.12.4",
     "prettier": "1.19.1",
     "sass": "1.23.7",
     "ts-jest": "24.2.0",
@@ -39,7 +38,6 @@
     "typescript": "3.7.2"
   },
   "dependencies": {
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "parcel": "^2.0.0-alpha.3.2"
   }
 }
