@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "rm -rf ./dev && parcel ./src/index.html",
     "tsc": "tsc --watch --noEmit",
-    "test": "jest --watch",
+    "test": "jest --watch --env=jsdom",
     "build": "rm -rf ./docs && parcel build --out-dir ./docs --public-url ./ ./src/index.html",
     "format": "npm run tslint && npm run prettier",
     "prettier": "prettier --write 'src/**/*.+(ts|tsx|json|html|scss)'",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/alexburner/mvp-ts#readme",
   "devDependencies": {
-    "@types/jest": "24.0.23",
+    "@types/jest": "24.9.1",
     "@types/react": "16.9.13",
     "@types/react-dom": "16.9.4",
     "jest": "24.9.0",

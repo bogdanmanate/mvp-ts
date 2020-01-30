@@ -8,6 +8,14 @@ export class Cell {
       this.canvas.appendChild(this.cell)
       this.draw();
     }
+
+    public get line(): number {
+        return this.i;
+    }
+
+    public get column():number {
+        return this.j;
+    }
     
     protected createCell() {
         const rect = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
