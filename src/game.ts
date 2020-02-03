@@ -36,35 +36,18 @@ export class Game {
     }
     
     public generate () {
-      const maxGen: number = this.matrixLines*this.matrixColumns/4;
-      for (let i =0; i < maxGen; i++) {
-        const ri: number = Math.floor(Math.random() * this.matrixLines);
-        const rj: number = Math.floor(Math.random() * this.matrixColumns);
-        
-        this.matrix[ri][rj].setActiveStatus(true);
-      }
+      // Write a function that randomly generates 25% of alive cells
     }
     
     public initialize() {
-      for (let i = 0; i < this.matrixLines; i++) {
-        this.matrix.push([]); 
-        for (let j = 0; j < this.matrixColumns; j++) {
-          const cell = new Cell(this.gameSVG, i, j);
-          this.matrix[i].push(cell);
-        }
-      }
+      // Initialize a matrix of dead cells
     }
     
     public run() {
         this.initialize();
         this.generate();
         const interval = setInterval(() => {
-            for (let i = 0; i < this.matrixLines; i++) {
-            for (let j = 0; j < this.matrixColumns; j++) {
-                const cell = this.matrix[i][j];
-                cell.setActiveStatus(this.healthChecker.checkIfCellIsAlive(cell,this.matrix));
-            }
-            }
+            // check the health of every cell in the matrix
         }, 150)
       return interval;
     }

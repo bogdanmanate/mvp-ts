@@ -25,16 +25,13 @@ export class Cell {
         rect.setAttributeNS(null, 'y', y.toString());
         rect.setAttributeNS(null, 'height', '10');
         rect.setAttributeNS(null, 'width', '10');
-        rect.setAttributeNS(null, 'fill', '#'+Math.round(0xffffff * Math.random()).toString(16));
 
         return rect;
     }
     protected draw() {
-      if (this.isAlive) {
-        this.cell.setAttributeNS(null, 'fill', '#FF0000');
-      } else {
-        this.cell.setAttributeNS(null, 'fill', '#FFFFFF');
-      }
+     // draw the cell according to the activeStatus
+     // White - when a cell is dead
+     // Red - when a cell is alive
     }
     
     public setActiveStatus(value:boolean) {
