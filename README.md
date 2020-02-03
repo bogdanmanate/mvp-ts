@@ -1,4 +1,4 @@
-# Conoway game of live
+# Conway's Game of Life
 
 Any live cell with two or three neighbors survives.
 Any dead cell with three live neighbors becomes a live cell.
