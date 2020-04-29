@@ -80,3 +80,5 @@ typings/
 .vuepress/dist
 
 # Serverless directories
+
+.parcel-cache
